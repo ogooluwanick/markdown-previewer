@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
+
+$bgcolor:#edf2f8;
+$black:#030303;
+$shadow: 1px 1px 10px 2px darken($bgcolor, 10%);
+$area-border: 1px solid darken($bgcolor, 35%);
+
+*{
+        font-family: 'Lato', sans-serif;    
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+        
+        i{
+                cursor: pointer;
+        }
+}
+
+body{
+        background-color: $bgcolor;
+        margin: auto 2rem;
+}
+
+.colorScheme {
+        background-color: lighten($bgcolor, 30%);
+        border: $area-border;
+        box-shadow: $shadow;
+        border-top: none;
+}
+
+.editorWrap{
+        max-width: 600px;
+        margin: 1.3rem auto;
+
+        textarea {
+                @extend .colorScheme;
+                width: 100%;
+                min-height: 250px;
+                margin-bottom: -5px;
+                resize: vertical;
+                outline: none;
+                padding-left: 5px;
+                padding-top: 5px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                font-family: 'Cutive', serif;
+                line-height: 1.25rem;
+              }
+
+}
+
+.previewWrap{
+        @extend .colorScheme;
+        max-width: 800px;
+        min-height: 250px;
+        margin: 1.2rem auto;
+        
+        overflow-wrap: break-word;
+
+
+}
+
+@media screen and (max-width: 850px) {
+        body{
+                margin: 0;
+        }
+        .editorWrap {
+                width: 80vw;
+        }
+        .previewWrap {
+                width: 90vw;
+        }
+      }
+
+.toolbar {
+        display: flex;
+        align-items: center;
+        background-color: darken($bgcolor,50%);
+        padding: 0.3rem 0.5rem ;
+        border: $area-border;
+        box-shadow: $shadow;
+        font-family: "Russo One",sans-serif;
+        font-size: 1.4rem;
+        color: $black;
+        i {
+          width: 25px;
+          margin-left: 5px;
+        }
+        .fa-arrows-alt,
+        .fa-compress {
+          margin-left: auto;
+          background-color: inherit;
+        }
+
+        .myLogo{
+                height: 30px;
+                width: 30px;
+                margin-right: 2px;
+                background-color: inherit;
+        
+        }
+      }
+
+.hide{
+        display: none;
+}
+
+.maximized {
+        width: 96%;
+        height: 100vh;
+        margin: 1em auto;
+        textarea {
+                min-height: 90vh;
+                resize: none;
+        }
+
+        #preview{
+                height: 95vh;
+                overflow-y: scroll;
+                scroll-behavior: smooth;
+        }
+}
+
+
+//MARK-DOWN CSS
+#preview {
+        padding: .2rem 1rem;
+        line-height: 1.5;
+        
+
+        blockquote {
+                font-size: 1.2rem;
+                border-left: 3px solid darken($bgcolor,40%);
+                color: darken($bgcolor,20%);
+                padding-left: 5px;
+                margin:5px 0 5px 25px ;
+        }
+
+        > p > code {
+                padding: 3px;
+        }
+
+        code {
+                background: darken($bgcolor,40%);
+                color: $bgcolor;
+                font-size: 0.875rem;
+                font-weight: bold;
+                border-radius: 5px;
+        }
+
+        pre {
+                overflow: auto;
+                background: darken($bgcolor,40%);
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px;
+                line-height: 1.2;
+                
+        }
+
+        a{
+                color: $black;
+                transition: color .3s ease-in-out;
+
+                &:hover{
+                        background-color: $bgcolor;
+                        color: lightblue;
+                        text-shadow: $shadow;
+                }
+        }
+
+        h1 {
+                padding: 3px 0;
+                border-bottom: 2px solid darken($bgcolor,15%);
+        }
+            
+        h2 {
+                padding: 3px 0;
+                border-bottom: 1px solid darken($bgcolor,15%);
+        }
+
+        table {
+                border-collapse: collapse;
+                margin: 5px 10px;
+        }
+
+        td, th {
+                border: 2px solid darken($bgcolor, 40%);
+                padding-left: 5px;
+                padding-right: 5px;
+        }
+
+        img{
+                display: block;
+                max-width: 70vw;
+                margin: 1rem auto;
+        }
+
+        ol,ul{
+                margin: 10px 0 10px 30px;
+
+                li{
+                        
+                }
+                
+        }
+            
+}
+
+@media screen and (max-width: 420px) {
+        body {
+          font-size: 0.875rem;
+        }
+      }
+      
+
+
